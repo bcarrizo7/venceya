@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VENCEYA - Control Contractual Inteligente</title>
+    <meta name="description"
+        content="VENCE<span class='logo-ya'>YA</span> - Plataforma de control contractual inteligente. Monitorea vencimientos, previene multas y gestiona todos tus contratos con IA avanzada.">
+    <meta name="keywords" content="gestión contractual, control de contratos, vencimientos, compliance, IA contratos">
+    <link rel="icon" type="image/png" href="Logo icon new vence ya.png">
+    <meta name="theme-color" content="#10b981">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://venceya.com/">
+    <meta property="og:title" content="VENCEYA - Control Contractual Inteligente">
+    <meta property="og:description"
+        content="Controla tus contratos antes de que se conviertan en riesgos, multas o pérdidas.">
+    <meta property="og:image" content="https://venceya.com/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://venceya.com/">
+    <meta property="twitter:title" content="VENCEYA - Control Contractual Inteligente">
+    <meta property="twitter:description"
+        content="Controla tus contratos antes de que se conviertan en riesgos, multas o pérdidas.">
+    <meta property="twitter:image" content="https://venceya.com/twitter-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo" aria-label="VENCEYA - Ir a inicio">
+                    <span class="logo-vence">VENCE</span><span class="logo-ya">YA</span>
+                </a>
+                <nav class="nav" role="navigation" aria-label="Navegación principal">
+                    <a href="#solucion">Solución</a>
+                    <a href="#beneficios">Beneficios</a>
+                    <a href="#testimonios">Casos</a>
+                    <a href="#demo" class="btn-demo"><i class="fas fa-calendar-check"></i> Solicitar Demo</a>
+                </nav>
+                <button class="nav-mobile" id="navToggle" aria-expanded="false" aria-label="Menú de navegación">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+                    <a href="#solucion">Solución</a>
+                    <a href="#beneficios">Beneficios</a>
+                    <a href="#testimonios">Casos</a>
+                    <a href="#demo" class="btn-demo"><i class="fas fa-calendar-check"></i> Solicitar Demo</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-bg-visuals">
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+                <div class="blob blob-3"></div>
+            </div>
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-text-content">
+                        <div class="hero-badge animate-in-up">
+                            <i class="fas fa-shield-check" aria-hidden="true"></i>
+                            <span>Control Contractual de Próxima Generación</span>
+                        </div>
+                        <h1 class="hero-title animate-in-up" id="hero-title" style="animation-delay: 0.1s;">
+                            Nada vence sin que <span class="text-gradient">lo sepas</span>
+                        </h1>
+                        <p class="hero-subtitle animate-in-up" style="animation-delay: 0.2s;">
+                            Controla tus contratos antes de que se conviertan en riesgos, multas o pérdidas silenciosas
+                            con nuestra IA de monitoreo activo.
+                        </p>
+                        <div class="hero-cta animate-in-up" style="animation-delay: 0.3s;">
+                            <a href="#demo" class="btn btn-primary btn-glow">
+                                <i class="fas fa-rocket"></i>
+                                Solicitar Demo Gratuita
+                            </a>
+                            <a href="#solucion" class="btn btn-secondary-glass">
+                                Conocer más
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-visual-content">
+                        <div class="product-showcase animate-in-right">
+                            <div class="app-window">
+                                <div class="app-header">
+                                    <div class="window-controls">
+                                        <span class="dot red"></span>
+                                        <span class="dot yellow"></span>
+                                        <span class="dot green"></span>
+                                    </div>
+                                    <div class="app-title-bar">Dashboard de Control</div>
+                                </div>
+                                <div class="app-body">
+                                    <div class="contract-card-mini">
+                                        <div class="contract-status alert">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                            Vencimiento Próximo
+                                        </div>
+                                        <div class="contract-details-ui">
+                                            <div class="skeleton-line title"></div>
+                                            <div class="skeleton-line"></div>
+                                            <div class="contract-data-points">
+                                                <div class="data-point">
+                                                    <span class="label">Término:</span>
+                                                    <span class="value dark-red">15 Ene 2024</span>
+                                                </div>
+                                                <div class="data-point">
+                                                    <span class="label">IA Alerta:</span>
+                                                    <span class="value">Detectada multas</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="activity-feed-ui">
+                                        <div class="feed-item-ui">
+                                            <div class="feed-icon green"><i class="fas fa-check"></i></div>
+                                            <div class="feed-text">IA extrajo 4 fechas</div>
+                                        </div>
+                                        <div class="feed-item-ui">
+                                            <div class="feed-icon indigo"><i class="fas fa-shield"></i></div>
+                                            <div class="feed-text">Riesgo mitigado</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Floating Elements -->
+                            <div class="floating-ui-element element-1">
+                                <i class="fas fa-brain"></i>
+                                <span>IA Analizando...</span>
+                            </div>
+                            <div class="floating-ui-element element-2">
+                                <i class="fas fa-bell"></i>
+                                <span>Alerta Enviada</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="hero-scroll" aria-label="Desplazar hacia abajo"
+                onclick="document.querySelector('.problema').scrollIntoView({behavior: 'smooth'})">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+        </section>
+
+
+    </main>
+    <!-- Problema -->
+    <section class="problema" id="problema" aria-labelledby="problema-title">
+        <div class="container">
+            <div class="section-header-pill">El Costo de la Invisibilidad</div>
+            <h2 class="section-title white" id="problema-title">La gestión manual es una <span class="text-danger">bomba
+                    de tiempo</span></h2>
+            <p class="section-subtitle">Ignorar los riesgos contractuales genera filtraciones de dinero que tu empresa
+                no puede permitirse.</p>
+
+            <div class="problema-grid-premium">
+                <!-- Problema 1 -->
+                <div class="problema-card-dark fade-in">
+                    <div class="card-risk-badge high">Impacto Crítico</div>
+                    <div class="problema-icon-wrapper">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Contratos en el Limbo</h3>
+                    <p>Documentos críticos archivados sin monitoreo activo. Nadie sabe qué se vence mañana.</p>
+                    <div class="risk-indicator">
+                        <div class="risk-bar high"></div>
+                    </div>
+                </div>
+
+                <!-- Problema 2 -->
+                <div class="problema-card-dark fade-in">
+                    <div class="card-risk-badge high">Pérdida Financiera</div>
+                    <div class="problema-icon-wrapper">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Renovaciones Fantasma</h3>
+                    <p>Costos innecesarios por servicios que ya no usas, renovados automáticamente por descuido.</p>
+                    <div class="risk-indicator">
+                        <div class="risk-bar high"></div>
+                    </div>
+                </div>
+
+                <!-- Problema 3 -->
+                <div class="problema-card-dark fade-in">
+                    <div class="card-risk-badge medium">Fuga de Control</div>
+                    <div class="problema-icon-wrapper">
+                        <i class="fas fa-eye-slash"></i>
+                    </div>
+                    <h3>Puntos Ciegos</h3>
+                    <p>La falta de un repositorio centralizado impide ver el riesgo legal acumulado de tu operación.</p>
+                    <div class="risk-indicator">
+                        <div class="risk-bar medium"></div>
+                    </div>
+                </div>
+
+                <!-- Problema 4 -->
+                <div class="problema-card-dark fade-in">
+                    <div class="card-risk-badge high">Riesgo Operativo</div>
+                    <div class="problema-icon-wrapper">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Reacción Tardía</h3>
+                    <p>Sin alertas proactivas, la solución siempre llega cuando la multa ya es inevitable.</p>
+                    <div class="risk-indicator">
+                        <div class="risk-bar high"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solución -->
+    <section id="solucion" class="solucion">
+        <div class="container">
+            <div class="solucion-content">
+                <div class="solucion-text">
+                    <h2 class="section-title">VENCE<span class="logo-ya">YA</span> transforma contratos en control</h2>
+                    <p class="solucion-description">
+                        No somos un gestor documental. No somos una carpeta digital.
+                        Somos la capa de control sobre todo lo que vence, obliga, compromete y expone legalmente a tu
+                        empresa.
+                    </p>
+                    <ul class="solucion-list">
+                        <li><i class="fas fa-check-circle"></i> Centraliza todos tus contratos</li>
+                        <li><i class="fas fa-check-circle"></i> Analiza con IA avanzada</li>
+                        <li><i class="fas fa-check-circle"></i> Extrae fechas, cláusulas y riesgos</li>
+                        <li><i class="fas fa-check-circle"></i> Monitorea vencimientos</li>
+                        <li><i class="fas fa-check-circle"></i> Dispara alertas automáticas</li>
+                        <li><i class="fas fa-check-circle"></i> Genera reportes ejecutivos</li>
+                    </ul>
+                </div>
+                <div class="solucion-visual">
+                    <div class="ai-intelligence-graph">
+                        <svg viewBox="0 0 400 400" class="intelligence-svg">
+                            <!-- Definitions for gradients and glows -->
+                            <defs>
+                                <radialGradient id="coreGradient" cx="50%" cy="50%">
+                                    <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+                                </radialGradient>
+                                <!-- Gradient for orbital ring -->
+                                <linearGradient id="orbitalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.4" />
+                                    <stop offset="50%" style="stop-color:#10b981;stop-opacity:0.15" />
+                                    <stop offset="100%" style="stop-color:#10b981;stop-opacity:0.4" />
+                                </linearGradient>
+
+                                <!-- Radial gradient for particles -->
+                                <radialGradient id="particleGlow">
+                                    <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#10b981;stop-opacity:0" />
+                                </radialGradient>
+
+                                <filter id="glow">
+                                    <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                                    <feMerge>
+                                        <feMergeNode in="coloredBlur" />
+                                        <feMergeNode in="SourceGraphic" />
+                                    </feMerge>
+                                </filter>
+                                <filter id="nodeGlow">
+                                    <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+                                    <feMerge>
+                                        <feMergeNode in="coloredBlur" />
+                                        <feMergeNode in="SourceGraphic" />
+                                    </feMerge>
+                                </filter>
+                            </defs>
+
+                            <!-- Animated Orbital Ring with Gradient -->
+                            <g class="orbital-ring">
+                                <circle cx="200" cy="200" r="140" fill="none" stroke="url(#orbitalGradient)"
+                                    stroke-width="2" stroke-dasharray="8, 6" opacity="0.8">
+                                    <animateTransform attributeName="transform" type="rotate" from="0 200 200"
+                                        to="360 200 200" dur="60s" repeatCount="indefinite" />
+                                </circle>
+                            </g>
+
+                            <!-- Orbiting Particles -->
+                            <g class="orbital-particles">
+                                <!-- Define the absolute orbital path -->
+                                <path id="orbitPath" d="M 340,200 A 140,140 0 1,1 340,199.99 Z" fill="none"
+                                    stroke="none" />
+
+                                <!-- Particle 1 -->
+                                <circle r="3" fill="url(#particleGlow)" filter="url(#glow)">
+                                    <animateMotion dur="15s" repeatCount="indefinite">
+                                        <mpath href="#orbitPath" />
+                                    </animateMotion>
+                                </circle>
+
+                                <!-- Particle 2 (25% offset) -->
+                                <circle r="2.5" fill="url(#particleGlow)" filter="url(#glow)">
+                                    <animateMotion dur="15s" repeatCount="indefinite" begin="3.75s">
+                                        <mpath href="#orbitPath" />
+                                    </animateMotion>
+                                </circle>
+
+                                <!-- Particle 3 (50% offset) -->
+                                <circle r="2" fill="url(#particleGlow)" filter="url(#glow)">
+                                    <animateMotion dur="15s" repeatCount="indefinite" begin="7.5s">
+                                        <mpath href="#orbitPath" />
+                                    </animateMotion>
+                                </circle>
+
+                                <!-- Particle 4 (75% offset) -->
+                                <circle r="2.5" fill="url(#particleGlow)" filter="url(#glow)">
+                                    <animateMotion dur="15s" repeatCount="indefinite" begin="11.25s">
+                                        <mpath href="#orbitPath" />
+                                    </animateMotion>
+                                </circle>
+                            </g>
+
+                            <!-- Connection Lines -->
+                            <g class="connections-layer">
+                                <!-- Contratos (Top: 0°) -->
+                                <line x1="200" y1="160" x2="200" y2="90" class="connection-line" />
+                                <!-- Fechas (72°: Upper Right) -->
+                                <line x1="227" y1="177" x2="303" y2="157" class="connection-line" />
+                                <!-- Cumplimiento (144°: Lower Right) -->
+                                <line x1="223" y1="232" x2="265" y2="283" class="connection-line" />
+                                <!-- Alertas (216°: Lower Left) -->
+                                <line x1="177" y1="232" x2="135" y2="283" class="connection-line" />
+                                <!-- Usuario (288°: Upper Left) -->
+                                <line x1="173" y1="177" x2="97" y2="157" class="connection-line" />
+                            </g>
+
+                            <!-- Animated Flow Lines -->
+                            <g class="flow-layer">
+                                <!-- Usuario -> Core (Input) -->
+                                <line x1="97" y1="157" x2="173" y2="177" class="flow-line flow-input">
+                                    <animate attributeName="stroke-dashoffset" from="0" to="-100" dur="2s"
+                                        repeatCount="indefinite" />
+                                </line>
+                                <!-- Core -> Contratos -->
+                                <line x1="200" y1="160" x2="200" y2="90" class="flow-line flow-output">
+                                    <animate attributeName="stroke-dashoffset" from="0" to="-100" dur="2s"
+                                        repeatCount="indefinite" begin="0.3s" />
+                                </line>
+                                <!-- Core -> Fechas -->
+                                <line x1="227" y1="177" x2="303" y2="157" class="flow-line flow-output">
+                                    <animate attributeName="stroke-dashoffset" from="0" to="-100" dur="2s"
+                                        repeatCount="indefinite" begin="0.6s" />
+                                </line>
+                                <!-- Core -> Cumplimiento -->
+                                <line x1="223" y1="232" x2="265" y2="283" class="flow-line flow-output">
+                                    <animate attributeName="stroke-dashoffset" from="0" to="-100" dur="2s"
+                                        repeatCount="indefinite" begin="0.9s" />
+                                </line>
+                                <!-- Core -> Alertas -->
+                                <line x1="177" y1="232" x2="135" y2="283" class="flow-line flow-output">
+                                    <animate attributeName="stroke-dashoffset" from="0" to="-100" dur="2s"
+                                        repeatCount="indefinite" begin="1.2s" />
+                                </line>
+
+                                <!-- RETURN FLOW: Alertas -> Usuario (Yellow, via orbital arc) -->
+                                <path d="M 118,343 A 140,140 0 0,1 67,187" class="flow-line flow-alert-return"
+                                    fill="none" opacity="0">
+                                    <!-- Opacity: invisible until it starts -->
+                                    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.01;0.99;1" dur="5s"
+                                        repeatCount="indefinite" begin="4.9s" />
+                                    <!-- Flow animation -->
+                                    <animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3s"
+                                        repeatCount="indefinite" begin="4.9s" />
+                                </path>
+                            </g>
+
+                            <!-- Central Core -->
+                            <g class="core-group">
+                                <circle cx="200" cy="200" r="50" class="core-pulse" />
+                                <circle cx="200" cy="200" r="40" fill="url(#coreGradient)" filter="url(#glow)" />
+                                <text x="200" y="210" text-anchor="middle" fill="white" font-size="32"
+                                    font-family="Arial">🧠</text>
+                            </g>
+
+                            <!-- Nodes in Perfect Pentagon Formation -->
+
+                            <!-- Contratos (0°: Top) -->
+                            <g class="node-group node-contratos">
+                                <circle cx="200" cy="60" r="30" class="node-circle" filter="url(#nodeGlow)" />
+                                <text x="200" y="68" text-anchor="middle" fill="white" font-size="20">📝</text>
+                                <text x="200" y="45" text-anchor="middle" fill="white" font-size="12"
+                                    opacity="0.9">Contratos</text>
+                            </g>
+
+                            <!-- Fechas (72°: Upper Right) -->
+                            <g class="node-group node-fechas">
+                                <circle cx="333" cy="157" r="30" class="node-circle" filter="url(#nodeGlow)" />
+                                <text x="333" y="165" text-anchor="middle" fill="white" font-size="20">📅</text>
+                                <text x="333" y="200" text-anchor="middle" fill="white" font-size="12"
+                                    opacity="0.9">Fechas</text>
+                            </g>
+
+                            <!-- Cumplimiento (144°: Lower Right) -->
+                            <g class="node-group node-cumplimiento">
+                                <circle cx="282" cy="313" r="30" class="node-circle" filter="url(#nodeGlow)" />
+                                <text x="282" y="321" text-anchor="middle" fill="white" font-size="20">✅</text>
+                                <text x="282" y="358" text-anchor="middle" fill="white" font-size="12"
+                                    opacity="0.9">Cumplimiento</text>
+                            </g>
+
+                            <!-- Alertas (216°: Lower Left) -->
+                            <g class="node-group node-alertas">
+                                <circle cx="118" cy="313" r="30" class="node-circle" filter="url(#nodeGlow)" />
+                                <text x="118" y="321" text-anchor="middle" fill="white" font-size="20">🔔</text>
+                                <text x="118" y="358" text-anchor="middle" fill="white" font-size="12"
+                                    opacity="0.9">Alertas</text>
+                            </g>
+
+                            <!-- Usuario (288°: Upper Left - Input Node) -->
+                            <g class="node-group node-input node-usuario">
+                                <circle cx="67" cy="157" r="30" class="node-circle" filter="url(#nodeGlow)" />
+                                <text x="67" y="165" text-anchor="middle" fill="white" font-size="20">👤</text>
+                                <text x="67" y="200" text-anchor="middle" fill="white" font-size="12"
+                                    opacity="0.9">Usuario</text>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="visual-features">
+                        <div class="feature-tag"><i class="fas fa-check"></i> Extracción automática</div>
+                        <div class="feature-tag"><i class="fas fa-check"></i> Alertas inteligentes</div>
+                        <div class="feature-tag"><i class="fas fa-check"></i> Dashboard en tiempo real</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section id="beneficios" class="beneficios">
+        <div class="container">
+            <h2 class="section-title">Evita pérdidas antes de que ocurran</h2>
+            <div class="beneficios-grid">
+                <div class="beneficio-card accent-blue">
+                    <div class="beneficio-icon-circle">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3>Previene</h3>
+                    <p>Anticípate a vencimientos, renovaciones y obligaciones contractuales</p>
+                </div>
+                <div class="beneficio-card accent-indigo">
+                    <div class="beneficio-icon-circle">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Controla</h3>
+                    <p>Visibilidad total de tu exposición legal y contractual</p>
+                </div>
+                <div class="beneficio-card accent-green">
+                    <div class="beneficio-icon-circle">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <h3>Cumple</h3>
+                    <p>Garantiza cumplimiento de auditorías y compliance</p>
+                </div>
+                <div class="beneficio-card accent-orange">
+                    <div class="beneficio-icon-circle">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h3>Ahorra</h3>
+                    <p>Evita multas, penalidades y costos por incumplimiento</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- CTA Band -->
+    <section class="cta-band">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2><i class="fas fa-bolt"></i> Solicita tu Demo de VENCEYA sin compromiso</h2>
+                    <p>VENCEYA, la IA que te avisa lo que vence hoy y vencerá mañana.</p>
+                </div>
+                <a href="#demo" class="btn btn-primary btn-large">
+                    <i class="fas fa-rocket"></i>
+                    Comenzar ahora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo -->
+    <section id="demo" class="demo" aria-labelledby="demo-title">
+        <div class="container">
+            <div class="demo-content">
+                <div class="demo-info">
+                    <h2 class="section-title" id="demo-title">Controla antes de que sea tarde</h2>
+                    <p class="demo-subtitle">Solicita una demostración personalizada para tu empresa</p>
+                    <div class="demo-benefits">
+                        <div class="demo-benefit">
+                            <div class="benefit-icon-circle"><i class="fas fa-video"></i></div>
+                            <span>Demo personalizada de 30 minutos</span>
+                        </div>
+                        <div class="demo-benefit">
+                            <div class="benefit-icon-circle"><i class="fas fa-search"></i></div>
+                            <span>Análisis de tus necesidades</span>
+                        </div>
+                        <div class="demo-benefit">
+                            <div class="benefit-icon-circle"><i class="fas fa-gift"></i></div>
+                            <span>Prueba gratuita de 14 días</span>
+                        </div>
+                        <div class="demo-benefit">
+                            <div class="benefit-icon-circle"><i class="fas fa-shield-halved"></i></div>
+                            <span>Sin compromiso ni tarjeta de crédito</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-form-wrapper">
+                    <form class="demo-form" id="demoForm" aria-label="Formulario de solicitud de demo">
+                        <div class="form-group">
+                            <label for="nombre"><i class="fas fa-user" aria-hidden="true"></i> Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Juan Pérez" required
+                                aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope" aria-hidden="true"></i> Email
+                                corporativo</label>
+                            <input type="email" id="email" name="email" placeholder="juan@empresa.com" required
+                                aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="empresa"><i class="fas fa-building" aria-hidden="true"></i> Empresa</label>
+                            <input type="text" id="empresa" name="empresa" placeholder="Tu Empresa S.A." required
+                                aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono"><i class="fas fa-phone" aria-hidden="true"></i> Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678" required
+                                aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="area"><i class="fas fa-briefcase" aria-hidden="true"></i> Área de
+                                interés</label>
+                            <select id="area" name="area" required aria-required="true">
+                                <option value="">Selecciona un área</option>
+                                <option value="legal">Legal</option>
+                                <option value="compliance">Compliance</option>
+                                <option value="finanzas">Finanzas</option>
+                                <option value="compras">Compras</option>
+                                <option value="operaciones">Operaciones</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-paper-plane"></i>
+                            Solicitar Demo Gratuita
+                        </button>
+                        <p class="form-privacy"><i class="fas fa-lock"></i> Tus datos están protegidos</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo"><span class="logo-vence" style="color: #ffffff;">VENCE</span><span
+                            class="logo-ya">YA</span>
+                    </div>
+                    <p>Control contractual inteligente</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Plataforma</h4>
+                        <a href="#solucion">Solución</a>
+                        <a href="#beneficios">Beneficios</a>
+                        <a href="#testimonios">Casos de éxito</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Empresa</h4>
+                        <a href="#">Nosotros</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Contacto</a>
+                        <a href="#">Carreras</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="#">Términos de uso</a>
+                        <a href="#">Privacidad</a>
+                        <a href="#">Cookies</a>
+                        <a href="#">Seguridad</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 VENCE<span class="logo-ya">YA</span>. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Widget -->
+    <a href="https://wa.me/56999917833?text=Hola,%20me%20gustaría%20solicitar%20una%20demo%20de%20VENCEYA."
+        class="whatsapp-widget" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">¿Tienes dudas? ¡Escríbenos!</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

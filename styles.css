@@ -554,18 +554,76 @@ a:focus-visible {
         grid-template-columns: 1fr;
         text-align: center;
         gap: var(--spacing-2xl);
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Reordenar elementos en móvil para UX optimizada */
+    .hero-text-content {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-visual-content {
+        order: 2;
+        /* El mockup aparece segundo, justo después del título */
+    }
+
+    /* Orden interno del hero-text-content */
+    .hero-badge {
+        order: 1;
+    }
+
+    .hero-title {
+        order: 2;
+    }
+
+    /* El contenedor visual se inserta aquí visualmente (order: 2 en hero-grid) */
+
+    .hero-subtitle {
+        order: 3;
+    }
+
+    .hero-cta {
+        order: 4;
+    }
+}
+
+/* Separar el reordenamiento interno solo para móviles pequeños */
+@media (max-width: 600px) {
+    .hero-text-content {
+        display: contents;
+        /* Elimina el contenedor para que los hijos tengan orden directo */
+    }
+
+    .hero-badge {
+        order: 1;
+    }
+
+    .hero-title {
+        order: 2;
+    }
+
+    .hero-visual-content {
+        order: 3;
+        /* Mockup visual aquí */
+    }
+
+    .hero-subtitle {
+        order: 4;
+    }
+
+    .hero-cta {
+        order: 5;
     }
 }
 
 .hero-text-content {
     max-width: 650px;
+    margin: 0 auto;
 }
 
-@media (max-width: 1024px) {
-    .hero-text-content {
-        margin: 0 auto;
-    }
-}
 
 .hero-badge {
     display: inline-flex;
@@ -590,10 +648,52 @@ a:focus-visible {
 }
 
 .text-gradient {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    /* Gradiente premium con colores originales (verde → azul) */
+    background: linear-gradient(110deg,
+            #059669 0%,
+            /* Verde oscuro */
+            #10b981 30%,
+            /* Verde primario */
+            #34d399 45%,
+            /* Verde claro */
+            #6366f1 70%,
+            /* Azul/Índigo secundario */
+            #818cf8 100%
+            /* Azul claro */
+        );
+    background-size: 300% 100%;
+    /* Gradiente grande para movimiento suave */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+
+    /* Animación profesional y fluida */
+    animation: premium-shimmer 4s ease-in-out infinite;
+
+    /* Efecto de brillo sutil */
+    filter: brightness(1.1);
+
+    position: relative;
+    display: inline-block;
+}
+
+/* Animación suave y profesional del gradiente */
+@keyframes premium-shimmer {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Efecto hover sutil para interactividad premium */
+.hero-title:hover .text-gradient {
+    filter: brightness(1.2);
+    transition: filter 0.3s ease;
 }
 
 .hero-subtitle {
@@ -849,19 +949,28 @@ a:focus-visible {
     color: var(--primary);
 }
 
-@media (max-width: 1024px) {
-    .floating-ui-element {
-        display: none;
-    }
-
-    .app-window {
-        transform: none;
-    }
-}
+/* Elementos flotantes visibles en todas las pantallas para experiencia consistente */
 
 @media (max-width: 600px) {
     .product-showcase {
         padding: 10px;
+    }
+
+    /* Ajustar elementos flotantes para móvil */
+    .floating-ui-element {
+        padding: 8px 12px;
+        font-size: 0.7rem;
+        gap: 6px;
+    }
+
+    .element-1 {
+        left: -10px;
+        top: 8%;
+    }
+
+    .element-2 {
+        right: -10px;
+        bottom: 8%;
     }
 }
 
@@ -1483,19 +1592,23 @@ a:focus-visible {
 
 @media (max-width: 1024px) {
     .ai-intelligence-graph {
-        transform: scale(0.85);
-        height: 380px;
+        transform: scale(0.95);
+        /* Ligeramente más grande para tablets */
+        height: 420px;
     }
 }
 
 @media (max-width: 600px) {
     .ai-intelligence-graph {
-        transform: scale(0.75);
-        height: 320px;
+        transform: scale(1.1);
+        /* Más grande en móvil para mejor visibilidad */
+        height: 450px;
+        max-width: 100%;
     }
 
     .data-node::after {
-        display: none;
+        font-size: 0.65rem;
+        /* Etiquetas ligeramente más pequeñas pero visibles */
     }
 }
 
@@ -2685,4 +2798,91 @@ a:focus-visible {
     fill: rgba(251, 191, 36, 0.2) !important;
     stroke: #fbbf24 !important;
     filter: drop-shadow(0 0 12px #fbbf24) !important;
+}
+
+/* ===================================
+   ROCKET LAUNCH ANIMATION
+   Premium UX for CTA buttons
+   =================================== */
+
+/* Estado durante la animación de lanzamiento */
+.btn.launching {
+    pointer-events: none;
+    /* Evita doble-click */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Animación: Texto desaparece */
+.btn.launching {
+    color: transparent !important;
+}
+
+/* Animación: Cohete vuela */
+/* Animación: Cohete vuela (Simplificada y ultra-fluida) */
+@keyframes rocket-launch {
+    0% {
+        transform: translateX(0) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+
+    /* Fase de despegue: Girar rápido para apuntar (20% del tiempo) */
+    20% {
+        transform: translateX(40px) rotate(45deg) scale(1.1);
+        opacity: 1;
+    }
+
+    /* Fase de vuelo: Mantener ángulo y acelerar a fondo */
+    100% {
+        transform: translateX(400px) rotate(45deg) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Estilo del cohete durante lanzamiento */
+.btn.launching .fa-rocket {
+    /* Ease-in para que acelere naturalmente a través de los keyframes */
+    animation: rocket-launch 0.3s ease-in forwards;
+    display: inline-block;
+    /* Usar inherit para mantener el color original del botón (blanco o verde) */
+    color: inherit !important;
+    position: relative;
+    z-index: 10;
+    /* Hardware acceleration fix */
+    will-change: transform, opacity;
+}
+
+/* Eliminado el efecto de estela/trail que se veía como una línea rara */
+.btn.launching .fa-rocket::after {
+    display: none;
+}
+
+@keyframes rocket-trail {
+
+    0%,
+    20% {
+        opacity: 0;
+        width: 0;
+    }
+
+    40% {
+        opacity: 1;
+        width: 40px;
+    }
+
+    100% {
+        opacity: 0;
+        width: 60px;
+    }
+}
+
+/* Respeto por preferencias de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .btn.launching .fa-rocket {
+        animation: none;
+    }
+
+    .btn.launching .fa-rocket::after {
+        display: none;
+    }
 }

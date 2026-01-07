@@ -163,6 +163,9 @@ document.addEventListener('keydown', (e) => {
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        // IGNORE ROCKET BUTTONS (handled by specific logic)
+        if (this.classList.contains('js-rocket-btn')) return;
+
         const href = this.getAttribute('href');
         if (href === '#') return;
 
@@ -616,3 +619,84 @@ const handleResize = debounce(() => {
 }, 250);
 
 window.addEventListener('resize', handleResize);
+
+/* ===================================
+   ROCKET LAUNCH EFFECT
+   Premium UX for CTA buttons
+   =================================== */
+
+// Función para manejar el efecto de lanzamiento del cohete
+function handleRocketLaunch(event) {
+    // IMPORTANTE: Prevenir la navegación por defecto PRIMERO
+    event.preventDefault();
+    event.stopPropagation();
+
+    const button = event.currentTarget;
+    const targetHref = button.getAttribute('href');
+
+    // Solo aplicar si tiene un cohete
+    const hasRocket = button.querySelector('.fa-rocket');
+    if (!hasRocket) {
+        // Si no tiene cohete, navegar normalmente
+        if (targetHref && targetHref.startsWith('#')) {
+            smoothScrollTo(targetHref);
+        } else {
+            window.location.href = targetHref;
+        }
+        return;
+    }
+
+    // Si ya está lanzando, ignorar
+    if (button.classList.contains('launching')) {
+        return;
+    }
+
+    // Verificar si el usuario prefiere movimiento reducido
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        // Si prefiere movimiento reducido, navegar inmediatamente
+        if (targetHref && targetHref.startsWith('#')) {
+            smoothScrollTo(targetHref);
+        } else {
+            window.location.href = targetHref;
+        }
+        return;
+    }
+
+    // Agregar clase de lanzamiento
+    button.classList.add('launching');
+
+    // Después de la animación (1.2s), navegar al destino
+    setTimeout(() => {
+        // Navegación suave
+        if (targetHref && targetHref.startsWith('#')) {
+            // Si es un ancla interna, hacer scroll suave
+            const targetElement = document.querySelector(targetHref);
+            if (targetElement) {
+                smoothScrollTo(targetHref);
+            }
+        } else {
+            // Si es una URL externa, navegar
+            window.location.href = targetHref;
+        }
+
+        // Remover clase después de navegar (para cuando vuelvan)
+        setTimeout(() => {
+            button.classList.remove('launching');
+        }, 100);
+    }, 300); // 0.3 segundos - duración ULTRA RÁPIDA
+}
+
+// Seleccionar botones ESPECÍFICOS con la clase js-rocket-btn
+document.addEventListener('DOMContentLoaded', () => {
+    const rocketButtons = document.querySelectorAll('.js-rocket-btn');
+
+    rocketButtons.forEach(button => {
+        // Use capture: true to handle event BEFORE bubble phase
+        button.addEventListener('click', handleRocketLaunch, { capture: true });
+    });
+
+    // Log en desarrollo
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        console.log('🚀 Rocket Launch Effect initialized on', rocketButtons.length, 'buttons (Shielded Mode)');
+    }
+});
